@@ -14,55 +14,83 @@ struct ContentView: View {
         NavigationStack{
             VStack{
                 List{
-                    //MARK: binding
-                    // ForEach($tasks) { $task in
+                    
+                    //MARK: Method 2
+                    /*
+                     ForEach($tasks) { $task in
+                     Button(action: {
+                     task.isComplete.toggle()
+                     }, label: {
+                     HStack {
+                     Image(systemName: task.isComplete ? "checkmark.circle" : "circle")
+                     .font(.system(size: 16))
+                     .foregroundStyle(.black)
+                     Text(task.title)
+                     .font(.system(size: 16))
+                     .foregroundStyle(.black)
+                     Spacer()
+                     Text(task.priority.title)
+                     .font(.system(size: 15, weight: .bold))
+                     .padding(.horizontal, 12)
+                     .padding(.vertical, 5)
+                     .foregroundStyle(task.priority.color)
+                     .background(Capsule().fill(task.priority.color.opacity(0.4)))
+                     }
+                     })
+                     */
+                    //    MARK: Methode 1
+                    /*             ForEach(tasks) { task in
+                     
+                     Button(action: {
+                     if let taskIndex = tasks.firstIndex(where: {$0.id == task.id}){
+                     tasks[taskIndex] = Task(title: task.title, isComplete: !task.isComplete, priority: task.priority)
+                     }
+                     }, label: {
+                     HStack {
+                     Image(systemName: task.isComplete ? "checkmark.circle" : "circle")
+                     .font(.system(size: 16))
+                     .foregroundStyle(.black)
+                     Text(task.title)
+                     .font(.system(size: 16))
+                     .foregroundStyle(.black)
+                     Spacer()
+                     Text(task.priority.title)
+                     .font(.system(size: 15, weight: .bold))
+                     .padding(.horizontal, 12)
+                     .padding(.vertical, 5)
+                     .foregroundStyle(task.priority.color)
+                     .background(Capsule().fill(task.priority.color.opacity(0.4)))
+                     }
+                     })
+                     */
+                    
+                    //MARK: Methode 3
                     ForEach($tasks) { $task in
-//                        Button(action: {
-//                            //task.isComplete.toggle()
-//                            if let taskIndex = tasks.firstIndex(where: {$0.id == task.id}){
-//                                tasks[taskIndex] = Task(title: task.title, isComplete: !task.isComplete, priority: task.priority)
-//                            }
-//                        }, label: {
-//                            HStack {
-//                                Image(systemName: task.isComplete ? "checkmark.circle" : "circle")
-//                                    .font(.system(size: 16))
-//                                    .foregroundStyle(.black)
-//                                Text(task.title)
-//                                    .font(.system(size: 16))
-//                                    .foregroundStyle(.black)
-//                                Spacer()
-//                                Text(task.priority.title)
-//                                    .font(.system(size: 15, weight: .bold))
-//                                    .padding(.horizontal, 12)
-//                                    .padding(.vertical, 5)
-//                                    .foregroundStyle(task.priority.color)
-//                                    .background(Capsule().fill(task.priority.color.opacity(0.4)))
-//                            }
-//                        })
-                        
                         NavigationLink {
                             TaskDetailView(task: $task)
                         } label: {
                             HStack {
-                                                            Image(systemName: task.isComplete ? "checkmark.circle" : "circle")
-                                                                .font(.system(size: 16))
-                                                                .foregroundStyle(.black)
-                                                            Text(task.title)
-                                                                .font(.system(size: 16))
-                                                                .foregroundStyle(.black)
-                                                            Spacer()
-                                                            Text(task.priority.title)
-                                                                .font(.system(size: 15, weight: .bold))
-                                                                .padding(.horizontal, 12)
-                                                                .padding(.vertical, 5)
-                                                                .foregroundStyle(task.priority.color)
-                                                                .background(Capsule().fill(task.priority.color.opacity(0.4)))
-                                                        }
+                                Image(systemName: task.isComplete ? "checkmark.circle" : "circle")
+                                    .font(.system(size: 16))
+                                    .foregroundStyle(.black)
+                                Text(task.title)
+                                    .font(.system(size: 16))
+                                    .foregroundStyle(.black)
+                                Spacer()
+                                Text(task.priority.title)
+                                    .font(.system(size: 15, weight: .bold))
+                                    .padding(.horizontal, 12)
+                                    .padding(.vertical, 5)
+                                    .foregroundStyle(task.priority.color)
+                                    .background(Capsule().fill(task.priority.color.opacity(0.4)))
+                            }
                         }
-
+                        
                     }
                     .onDelete(perform: delete)
-                }                }
+                }
+                
+            }
             
             .sheet(isPresented: $addTask) {
                 AddTaskView(taskList: $tasks)
