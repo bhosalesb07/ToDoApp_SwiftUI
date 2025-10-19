@@ -36,10 +36,10 @@ struct AddTaskView: View {
             }
             Button {
                 
-                guard !taskTitle.isEmpty else
+                guard taskTitle.count >= 2 else
                 {
                     alerttitle = "Invalid Title"
-                    alertMessage = "Please enter task title"
+                    alertMessage = "Title must be greater than 2 characters"
                     showAlert = true
                     return
                 }
