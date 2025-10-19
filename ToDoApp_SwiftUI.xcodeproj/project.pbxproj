@@ -14,6 +14,7 @@
 		04845A812EA4F73A00A3CDFE /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04845A802EA4F73A00A3CDFE /* Task.swift */; };
 		04845A832EA4F8B500A3CDFE /* AddTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04845A822EA4F8B500A3CDFE /* AddTaskView.swift */; };
 		04845A852EA507D300A3CDFE /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04845A842EA507D300A3CDFE /* Colors.xcassets */; };
+		04845A872EA51A1800A3CDFE /* TaskDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04845A862EA51A1800A3CDFE /* TaskDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		04845A802EA4F73A00A3CDFE /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		04845A822EA4F8B500A3CDFE /* AddTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskView.swift; sourceTree = "<group>"; };
 		04845A842EA507D300A3CDFE /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		04845A862EA51A1800A3CDFE /* TaskDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +44,7 @@
 		04845A652EA4F43000A3CDFE = {
 			isa = PBXGroup;
 			children = (
+				04845A862EA51A1800A3CDFE /* TaskDetailView.swift */,
 				04845A702EA4F43000A3CDFE /* ToDoApp_SwiftUI */,
 				04845A6F2EA4F43000A3CDFE /* Products */,
 			);
@@ -153,6 +156,7 @@
 				04845A722EA4F43000A3CDFE /* ToDoApp_SwiftUIApp.swift in Sources */,
 				04845A832EA4F8B500A3CDFE /* AddTaskView.swift in Sources */,
 				04845A812EA4F73A00A3CDFE /* Task.swift in Sources */,
+				04845A872EA51A1800A3CDFE /* TaskDetailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
